@@ -1,9 +1,9 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import { vars } from '../lib/theme'
+import vars from '../vars'
 
-const Container = ({ children, maxWidth = vars.break.xxl, flush = false }) => {
+const Container = ({ children, maxWidth = vars.size.xxl, flush = false }) => {
   return (
     <div
       css={css`

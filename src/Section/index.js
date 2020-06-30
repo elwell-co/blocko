@@ -1,25 +1,9 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import { vars } from '../lib/theme'
+import vars from '../vars'
 
-const Section = ({
-  children,
-  flush = false,
-  minHeight = 'auto',
-  bg = vars.colors.white,
-  ...props
-}) => {
-  // const headingColor = vars.colors.primary.darkest;
-  const getContrastingColor = (bg) => {
-    switch (bg) {
-      case vars.colors.primary.mid:
-        return vars.colors.white
-      default:
-        return 'black'
-    }
-  }
-  const headingColor = getContrastingColor(bg)
+const Section = ({ children, minHeight = 'auto', bg, spacing, ...props }) => {
   return (
     <div
       css={css`
@@ -30,20 +14,11 @@ const Section = ({
         display: flex;
         align-items: center;
         justify-content: center;
-
-        ${!flush &&
+        ${spacing &&
         css`
-          padding-top: 5vw;
-          padding-bottom: 5vw;
+          padding-top: ${vars.spacing[spacing]};
+          padding-bottom: ${vars.spacing[spacing]};
         `}
-        .h1,
-        .h2,
-        .h3,
-        .h4,
-        .h5,
-        .h6 {
-          color: ${headingColor};
-        }
       `}
       {...props}
     >

@@ -1,9 +1,9 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import { vars } from '../lib/theme'
+import vars from '../vars'
 
-const Cols = ({ children, vAlign, gutter = vars.spacing[2], ...props }) => (
+const Cols = ({ children, vAlign, gutter = vars.spacing[1], ...props }) => (
   <div
     css={css`
       overflow: hidden;

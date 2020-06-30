@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import { vars } from '../lib/theme'
+import vars from '../vars'
 
 /**
  * Represents a single column
@@ -12,7 +12,7 @@ function Col({ children, width = 1 }) {
       css={css`
         box-sizing: border-box;
         flex: 0 0 100%;
-        @media screen and (min-width: ${vars.break.md}) {
+        @media screen and (min-width: ${vars.size.md}) {
           flex: 0 0 ${width * 100 + '%'};
         }
       `}

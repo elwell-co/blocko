@@ -2,13 +2,14 @@ import React from 'react'
 
 import { BgImg, Col, Cols, Container, Section, H } from 'blocko'
 
-// import 'blocko/dist/index.css'
+import logo from './blocko-logo.svg'
 
 const App = () => {
   return (
     <div>
-      <Section bg='#eee'>
+      <Section bg='#900' spacing={0}>
         <Container>
+          <img src={logo} alt='Blocko Logo' />
           <H>Section > Container</H>
         </Container>
       </Section>
