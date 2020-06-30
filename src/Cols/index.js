@@ -1,9 +1,9 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import vars from '../vars'
+import defaults from '../defaults'
 
-const Cols = ({ children, vAlign, gutter = vars.spacing[1], ...props }) => (
+const Cols = ({ children, vAlign, space = defaults.space[1], ...props }) => (
   <div
     css={css`
       overflow: hidden;
@@ -11,17 +11,21 @@ const Cols = ({ children, vAlign, gutter = vars.spacing[1], ...props }) => (
   >
     <div
       css={css`
-        min-width: calc(100% - ${gutter * 2});
+        min-width: 100%;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
-        margin: -${gutter};
-        & > * {
-          padding: ${gutter};
-        }
         ${vAlign === 'center' &&
         css`
           align-items: center;
+        `}
+        ${space &&
+        css`
+          /* min-width: calc(100% - ${space} - ${space}); */
+          margin: -${space};
+          & > * {
+            padding: ${space};
+          }
         `}
       `}
       {...props}

@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eee;
 }
 
 code {
@@ -24,5 +25,5 @@ code {
 }
 
 * {
-  outline: 1px solid rgba(0, 0, 0, 0.2);
+  /* outline: 1px dotted rgba(0, 0, 0, 0.2); */
 }

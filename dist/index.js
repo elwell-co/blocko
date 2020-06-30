@@ -55,7 +55,8 @@ var BgImg = function BgImg(_ref) {
   }));
 };
 
-var vars = {
+var defaults = {
+  space: ['0', '2.5em', '5em'],
   spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
   size: {
     xs: '400px',
@@ -77,10 +78,12 @@ var _StyledDiv = _styled__default("div").withConfig({
 function Col(_ref) {
   var children = _ref.children,
       _ref$width = _ref.width,
-      width = _ref$width === void 0 ? 1 : _ref$width;
-  return /*#__PURE__*/React.createElement(_StyledDiv, {
-    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars.size.md, width * 100 + '%')
-  }, children);
+      width = _ref$width === void 0 ? 1 : _ref$width,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "width"]);
+
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], defaults.size.md, width * 100 + '%', width * 100 + '%')
+  }), children);
 }
 
 var _StyledDiv$1 = _styled__default("div").withConfig({
@@ -100,14 +103,14 @@ var _StyledDiv2 = _styled__default("div").withConfig({
 var Cols = function Cols(_ref) {
   var children = _ref.children,
       vAlign = _ref.vAlign,
-      _ref$gutter = _ref.gutter,
-      gutter = _ref$gutter === void 0 ? vars.spacing[1] : _ref$gutter,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "gutter"]);
+      _ref$space = _ref.space,
+      space = _ref$space === void 0 ? defaults.space[1] : _ref$space,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "space"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$1, {
     _css2: _styled.css(["overflow:hidden;"])
   }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
-    _css3: _styled.css(["min-width:calc(100% - ", ");box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], gutter * 2, gutter, gutter, vAlign === 'center' && _styled.css(["align-items:center;"]))
+    _css3: _styled.css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", ""], vAlign === 'center' && _styled.css(["align-items:center;"]), space && _styled.css(["margin:-", ";& > *{padding:", ";}"], space, space))
   }), children));
 };
 
@@ -120,13 +123,15 @@ var _StyledDiv$2 = _styled__default("div").withConfig({
 
 var Container = function Container(_ref) {
   var children = _ref.children,
-      _ref$maxWidth = _ref.maxWidth,
-      maxWidth = _ref$maxWidth === void 0 ? vars.size.xxl : _ref$maxWidth,
-      _ref$flush = _ref.flush,
-      flush = _ref$flush === void 0 ? false : _ref$flush;
-  return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], maxWidth, !flush && _styled.css(["padding-left:5vw;padding-right:5vw;"]))
-  }, children);
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? defaults.size.lg : _ref$size,
+      _ref$space = _ref.space,
+      space = _ref$space === void 0 ? defaults.space[2] : _ref$space,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "size", "space"]);
+
+  return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({}, props, {
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], size, space && _styled.css(["padding-left:", ";padding-right:", ";"], space, space))
+  }), children);
 };
 
 var _StyledDiv$3 = _styled__default("div").withConfig({
@@ -138,15 +143,41 @@ var _StyledDiv$3 = _styled__default("div").withConfig({
 
 var Section = function Section(_ref) {
   var children = _ref.children,
-      _ref$minHeight = _ref.minHeight,
-      minHeight = _ref$minHeight === void 0 ? 'auto' : _ref$minHeight,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 'auto' : _ref$height,
       bg = _ref.bg,
-      spacing = _ref.spacing,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "minHeight", "bg", "spacing"]);
+      _ref$space = _ref.space,
+      space = _ref$space === void 0 ? defaults.space[2] : _ref$space,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "height", "bg", "space"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({}, props, {
-    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], minHeight, bg, spacing && _styled.css(["padding-top:", ";padding-bottom:", ";"], vars.spacing[spacing], vars.spacing[spacing]))
+    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, space && _styled.css(["padding-top:", ";padding-bottom:", ";"], space, space))
   }), children);
+};
+
+var _StyledDiv$4 = _styled__default("div").withConfig({
+  displayName: "Box___StyledDiv",
+  componentId: "sc-17iadpk-0"
+})(["", ""], function (p) {
+  return p._css2;
+});
+
+var Box = function Box(_ref) {
+  var children = _ref.children,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 'auto' : _ref$height,
+      bg = _ref.bg,
+      _ref$vSpace = _ref.vSpace,
+      vSpace = _ref$vSpace === void 0 ? defaults.space[2] : _ref$vSpace,
+      width = _ref.width,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "height", "bg", "hSpace", "vSpace", "width"]);
+
+  return /*#__PURE__*/React.createElement(_StyledDiv$4, _extends({}, props, {
+    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, vSpace && _styled.css(["padding-top:", ";padding-bottom:", ";"], vSpace, vSpace))
+  }), /*#__PURE__*/React.createElement(Container, {
+    size: width,
+    space: vSpace
+  }, children));
 };
 
 var H = function H(_ref) {
@@ -162,6 +193,7 @@ var H = function H(_ref) {
 };
 
 exports.BgImg = BgImg;
+exports.Box = Box;
 exports.Col = Col;
 exports.Cols = Cols;
 exports.Container = Container;

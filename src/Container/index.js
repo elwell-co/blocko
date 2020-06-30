@@ -1,23 +1,30 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import vars from '../vars'
+import defaults from '../defaults'
 
-const Container = ({ children, maxWidth = vars.size.xxl, flush = false }) => {
+const Container = ({
+  children,
+  size = defaults.size.lg,
+  space = defaults.space[2],
+  ...props
+}) => {
   return (
     <div
       css={css`
         box-sizing: border-box;
         width: 100%;
-        max-width: ${maxWidth};
+        max-width: ${size};
         margin-left: auto;
         margin-right: auto;
-        ${!flush &&
+        /* position: relative; */
+        ${space &&
         css`
-          padding-left: 5vw;
-          padding-right: 5vw;
+          padding-left: ${space};
+          padding-right: ${space};
         `}
       `}
+      {...props}
     >
       {children}
     </div>

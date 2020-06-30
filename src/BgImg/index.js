@@ -1,8 +1,6 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-// import vars from '../vars';
-
 const BgImg = ({ ratio, ...props }) => {
   return (
     <img

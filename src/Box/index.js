@@ -1,13 +1,16 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
+import Container from '../Container'
 import defaults from '../defaults'
 
-const Section = ({
+const Box = ({
   children,
   height = 'auto',
   bg,
-  space = defaults.space[2],
+  hSpace = defaults.space[2],
+  vSpace = defaults.space[2],
+  width,
   ...props
 }) => {
   return (
@@ -20,17 +23,19 @@ const Section = ({
         display: flex;
         align-items: center;
         justify-content: center;
-        ${space &&
+        ${vSpace &&
         css`
-          padding-top: ${space};
-          padding-bottom: ${space};
+          padding-top: ${vSpace};
+          padding-bottom: ${vSpace};
         `}
       `}
       {...props}
     >
-      {children}
+      <Container size={width} space={vSpace}>
+        {children}
+      </Container>
     </div>
   )
 }
 
-export default Section
+export default Box

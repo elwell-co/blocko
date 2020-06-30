@@ -18,7 +18,8 @@ const BgImg = ({
   }));
 };
 
-const vars = {
+const defaults = {
+  space: ['0', '2.5em', '5em'],
   spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
   size: {
     xs: '400px',
@@ -37,11 +38,12 @@ var _StyledDiv = _styled("div").withConfig({
 
 function Col({
   children,
-  width = 1
+  width = 1,
+  ...props
 }) {
-  return /*#__PURE__*/React.createElement(_StyledDiv, {
-    _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars.size.md, width * 100 + '%')
-  }, children);
+  return /*#__PURE__*/React.createElement(_StyledDiv, Object.assign({}, props, {
+    _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], defaults.size.md, width * 100 + '%', width * 100 + '%')
+  }), children);
 }
 
 var _StyledDiv$1 = _styled("div").withConfig({
@@ -57,12 +59,12 @@ var _StyledDiv2 = _styled("div").withConfig({
 const Cols = ({
   children,
   vAlign,
-  gutter: _gutter = vars.spacing[1],
+  space: _space = defaults.space[1],
   ...props
 }) => /*#__PURE__*/React.createElement(_StyledDiv$1, {
   _css2: css(["overflow:hidden;"])
 }, /*#__PURE__*/React.createElement(_StyledDiv2, Object.assign({}, props, {
-  _css3: css(["min-width:calc(100% - ", ");box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], _gutter * 2, _gutter, _gutter, vAlign === 'center' && css(["align-items:center;"]))
+  _css3: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", ""], vAlign === 'center' && css(["align-items:center;"]), _space && css(["margin:-", ";& > *{padding:", ";}"], _space, _space))
 }), children));
 
 var _StyledDiv$2 = _styled("div").withConfig({
@@ -72,12 +74,13 @@ var _StyledDiv$2 = _styled("div").withConfig({
 
 const Container = ({
   children,
-  maxWidth: _maxWidth = vars.size.xxl,
-  flush: _flush = false
+  size: _size = defaults.size.lg,
+  space: _space = defaults.space[2],
+  ...props
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], _maxWidth, !_flush && css(["padding-left:5vw;padding-right:5vw;"]))
-  }, children);
+  return /*#__PURE__*/React.createElement(_StyledDiv$2, Object.assign({}, props, {
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], _size, _space && css(["padding-left:", ";padding-right:", ";"], _space, _space))
+  }), children);
 };
 
 var _StyledDiv$3 = _styled("div").withConfig({
@@ -87,14 +90,36 @@ var _StyledDiv$3 = _styled("div").withConfig({
 
 const Section = ({
   children,
-  minHeight: _minHeight = 'auto',
+  height: _height = 'auto',
   bg,
-  spacing,
+  space: _space = defaults.space[2],
   ...props
 }) => {
   return /*#__PURE__*/React.createElement(_StyledDiv$3, Object.assign({}, props, {
-    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _minHeight, bg, spacing && css(["padding-top:", ";padding-bottom:", ";"], vars.spacing[spacing], vars.spacing[spacing]))
+    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _height, bg, _space && css(["padding-top:", ";padding-bottom:", ";"], _space, _space))
   }), children);
+};
+
+var _StyledDiv$4 = _styled("div").withConfig({
+  displayName: "Box___StyledDiv",
+  componentId: "sc-17iadpk-0"
+})(["", ""], p => p._css2);
+
+const Box = ({
+  children,
+  height: _height = 'auto',
+  bg,
+  hSpace: _hSpace = defaults.space[2],
+  vSpace: _vSpace = defaults.space[2],
+  width,
+  ...props
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledDiv$4, Object.assign({}, props, {
+    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _height, bg, _vSpace && css(["padding-top:", ";padding-bottom:", ";"], _vSpace, _vSpace))
+  }), /*#__PURE__*/React.createElement(Container, {
+    size: width,
+    space: _vSpace
+  }, children));
 };
 
 const H = ({
@@ -108,5 +133,5 @@ const H = ({
   }, children);
 };
 
-export { BgImg, Col, Cols, Container, H, Section };
+export { BgImg, Box, Col, Cols, Container, H, Section };
 //# sourceMappingURL=index.modern.js.map
