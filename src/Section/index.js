@@ -28,8 +28,8 @@ const Section = ({
           padding-top: 40px;
           padding-bottom: 40px;
           @media screen and (min-width: 400px) {
-            padding-left: 5vw;
-            padding-right: 5vw;
+            padding-top: 5vw;
+            padding-bottom: 5vw;
           }
         `}
       `}

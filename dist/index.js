@@ -135,16 +135,15 @@ var Container = function Container(_ref) {
       children = _ref.children,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? defaults.size.lg : _ref$size,
-      _ref$space = _ref.space,
-      space = _ref$space === void 0 ? defaults.space[1] : _ref$space,
+      flush = _ref.flush,
       left = _ref.left,
       right = _ref.right,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "size", "space", "left", "right"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "size", "space", "flush", "left", "right"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, space && _styled.css(["padding-left:", ";padding-right:", ";"], space, space), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, !flush && _styled.css(["padding-left:20px;padding-right:20px;@media screen and (min-width:400px){padding-left:5vw;padding-right:5vw;}}"]), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
   }), children);
 };
 
@@ -161,14 +160,13 @@ var Section = function Section(_ref) {
       _ref$height = _ref.height,
       height = _ref$height === void 0 ? 'auto' : _ref$height,
       bg = _ref.bg,
-      _ref$space = _ref.space,
-      space = _ref$space === void 0 ? defaults.space[1] : _ref$space,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "height", "bg", "space"]);
+      flush = _ref.flush,
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "height", "bg", "space", "flush"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, space && _styled.css(["padding-top:", ";padding-bottom:", ";"], space, space))
+    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, !flush && _styled.css(["padding-top:40px;padding-bottom:40px;@media screen and (min-width:400px){padding-left:5vw;padding-right:5vw;}"]))
   }), children);
 };
 
