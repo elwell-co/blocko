@@ -4,6 +4,7 @@ import { css } from 'styled-components/macro'
 import defaults from '../defaults'
 
 const Section = ({
+  className,
   children,
   height = 'auto',
   bg,
@@ -12,6 +13,7 @@ const Section = ({
 }) => {
   return (
     <div
+      className={className}
       css={css`
         box-sizing: border-box;
         position: relative;

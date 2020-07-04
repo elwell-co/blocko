@@ -7,6 +7,7 @@ import defaults from '../defaults'
  * Represents a single column
  */
 function Col({
+  className,
   children,
   width = 1, // string or array. if array will change size at each breakpoint
   sizes = Object.values(defaults.size),
@@ -15,6 +16,7 @@ function Col({
   const widths = Array.isArray(width) ? width : [width]
   return (
     <div
+      className={className}
       css={css`
         box-sizing: border-box;
         flex: 0 0 100%;

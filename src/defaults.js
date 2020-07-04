@@ -1,5 +1,5 @@
 const defaults = {
-  space: ['0', '2.5em', '5em'],
+  space: ['0', '2em', '4em'],
   spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
   size: {
     xs: '400px',
