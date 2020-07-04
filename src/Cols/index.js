@@ -31,9 +31,9 @@ const Cols = ({ children, vAlign, flip, space = 0, ...props }) => (
           space &&
           css`
           /* min-width: calc(100% - ${space} - ${space}); */
-          margin: - calc((3.5vw + 24px) * space);
+          margin: - calc((3.5vw + 24px) * ${space});
           & > * {
-            padding: calc((3.5vw + 24px) * space);
+            padding: calc((3.5vw + 24px) * ${space});
           }
         `
         }
