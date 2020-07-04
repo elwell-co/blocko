@@ -39,7 +39,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 var _StyledImg = _styled__default("img").withConfig({
   displayName: "BgImg___StyledImg",
-  componentId: "sc-14h7406-0"
+  componentId: "fpmroz-0"
 })(["", ""], function (p) {
   return p._css2;
 });
@@ -70,7 +70,7 @@ var defaults = {
 
 var _StyledDiv = _styled__default("div").withConfig({
   displayName: "Col___StyledDiv",
-  componentId: "sc-1qixbma-0"
+  componentId: "sc-163x1ar-0"
 })(["", ""], function (p) {
   return p._css2;
 });
@@ -93,14 +93,14 @@ function Col(_ref) {
 
 var _StyledDiv$1 = _styled__default("div").withConfig({
   displayName: "Cols___StyledDiv",
-  componentId: "ecrkrv-0"
+  componentId: "j1gxv4-0"
 })(["", ""], function (p) {
   return p._css2;
 });
 
 var _StyledDiv2 = _styled__default("div").withConfig({
   displayName: "Cols___StyledDiv2",
-  componentId: "ecrkrv-1"
+  componentId: "j1gxv4-1"
 })(["", ""], function (p) {
   return p._css3;
 });
@@ -121,7 +121,7 @@ var Cols = function Cols(_ref) {
 
 var _StyledDiv$2 = _styled__default("div").withConfig({
   displayName: "Container___StyledDiv",
-  componentId: "sc-15n1cc7-0"
+  componentId: "cosp5m-0"
 })(["", ""], function (p) {
   return p._css2;
 });
@@ -146,7 +146,7 @@ var Container = function Container(_ref) {
 
 var _StyledDiv$3 = _styled__default("div").withConfig({
   displayName: "Section___StyledDiv",
-  componentId: "sc-19iyajk-0"
+  componentId: "sc-1wtj1q0-0"
 })(["", ""], function (p) {
   return p._css2;
 });
@@ -167,7 +167,7 @@ var Section = function Section(_ref) {
 
 var _StyledDiv$4 = _styled__default("div").withConfig({
   displayName: "Box___StyledDiv",
-  componentId: "sc-17iadpk-0"
+  componentId: "wtiqff-0"
 })(["", ""], function (p) {
   return p._css2;
 });
