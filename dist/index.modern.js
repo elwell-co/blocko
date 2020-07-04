@@ -141,7 +141,7 @@ var Container = function Container(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, !flush && css(["padding-left:20px;padding-right:20px;@media screen and (min-width:400px){padding-left:5vw;padding-right:5vw;}}"]), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, !flush && css(["padding-left:calc(3.5vw + 24px);padding-right:calc(3.5vw + 24px);"]), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
   }), children);
 };
 

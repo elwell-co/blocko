@@ -1,14 +1,12 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import defaults from '../defaults'
-
 /**
  * Represents a single column
  */
 function Col({ className, children, width = 1, ...props }) {
   // const widths = Array.isArray(width) ? width : [width]
-  const widths = Array.isArray(width) ? width : [{ size: '0px', width: width }]
+  const widths = Array.isArray(width) ? width : [{ '0px': width }]
   return (
     <div
       className={className}
@@ -18,9 +16,9 @@ function Col({ className, children, width = 1, ...props }) {
         ${widths.map(
           (w) =>
             css`
-              @media screen and (min-width: ${w.size}) {
-                width: ${w.width * 100 + '%'};
-                flex: 0 0 ${w.width * 100 + '%'};
+              @media screen and (min-width: ${Object.keys(w)[0]}) {
+                width: ${Object.values(w)[0] * 100 + '%'};
+                flex: 0 0 ${Object.values(w)[0] * 100 + '%'};
               }
             `
         )}
