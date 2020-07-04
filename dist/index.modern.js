@@ -77,16 +77,17 @@ function Col(_ref) {
       children = _ref.children,
       _ref$width = _ref.width,
       width = _ref$width === void 0 ? 1 : _ref$width,
-      _ref$sizes = _ref.sizes,
-      sizes = _ref$sizes === void 0 ? Object.values(defaults.size) : _ref$sizes,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "sizes"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width"]);
 
-  var widths = Array.isArray(width) ? width : [width];
+  var widths = Array.isArray(width) ? width : [{
+    size: '0px',
+    width: width
+  }];
   return /*#__PURE__*/React.createElement(_StyledDiv, _extends({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;flex:0 0 100%;", ""], widths.map(function (w, idx) {
-      return sizes[idx] && css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], sizes[idx], w * 100 + '%', w * 100 + '%');
+    _css2: css(["box-sizing:border-box;flex:0 0 100%;", ""], widths.map(function (w) {
+      return css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], w.size, w.width * 100 + '%', w.width * 100 + '%');
     }))
   }), children);
 }
@@ -163,7 +164,7 @@ var Section = function Section(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, !flush && css(["padding-top:40px;padding-bottom:40px;@media screen and (min-width:400px){padding-left:5vw;padding-right:5vw;}"]))
+    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, !flush && css(["padding-top:40px;padding-bottom:40px;@media screen and (min-width:400px){padding-top:5vw;padding-bottom:5vw;}"]))
   }), children);
 };
 

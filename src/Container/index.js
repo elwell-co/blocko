@@ -26,13 +26,8 @@ const Container = ({
         ${
           !flush &&
           css`
-            padding-left: 20px;
-            padding-right: 20px;
-            @media screen and (min-width: 400px) {
-              padding-left: 5vw;
-              padding-right: 5vw;
-            }
-  }
+            padding-left: calc(3.5vw + 24px);
+            padding-right: calc(3.5vw + 24px);
           `
         }
         ${
