@@ -8,7 +8,7 @@ const Section = ({
   children,
   height = 'auto',
   bg,
-  space = defaults.space[2],
+  space = defaults.space[1],
   ...props
 }) => {
   return (

@@ -7,7 +7,7 @@ const Container = ({
   className,
   children,
   size = defaults.size.lg,
-  space = defaults.space[2],
+  space = defaults.space[1],
   left,
   right,
   ...props
