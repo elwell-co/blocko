@@ -55,19 +55,6 @@ var BgImg = function BgImg(_ref) {
   }));
 };
 
-var defaults = {
-  space: ['0', '2em', '4em'],
-  spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
-  size: {
-    xs: '400px',
-    sm: '560px',
-    md: '780px',
-    lg: '960px',
-    xl: '1200px',
-    xxl: '1500px'
-  }
-};
-
 var _StyledDiv = _styled__default("div").withConfig({
   displayName: "Col___StyledDiv",
   componentId: "sc-163x1ar-0"
@@ -83,17 +70,29 @@ function Col(_ref) {
       props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width"]);
 
   var widths = Array.isArray(width) ? width : [{
-    size: '0px',
-    width: width
+    '0px': width
   }];
   return /*#__PURE__*/React.createElement(_StyledDiv, _extends({
     className: className
   }, props, {
     _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;", ""], widths.map(function (w) {
-      return _styled.css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], w.size, w.width * 100 + '%', w.width * 100 + '%');
+      return _styled.css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], Object.keys(w)[0], Object.values(w)[0] * 100 + '%', Object.values(w)[0] * 100 + '%');
     }))
   }), children);
 }
+
+var defaults = {
+  space: ['0', '2em', '4em'],
+  spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
+  size: {
+    xs: '400px',
+    sm: '560px',
+    md: '780px',
+    lg: '960px',
+    xl: '1200px',
+    xxl: '1500px'
+  }
+};
 
 var _StyledDiv$1 = _styled__default("div").withConfig({
   displayName: "Cols___StyledDiv",

@@ -6,7 +6,7 @@ import { css } from 'styled-components/macro'
  */
 function Col({ className, children, width = 1, ...props }) {
   // const widths = Array.isArray(width) ? width : [width]
-  const widths = Array.isArray(width) ? width : [{ '0px': width }]
+  const widths = Array.isArray(width) ? width : [{ width: '0px' }]
   return (
     <div
       className={className}
@@ -16,9 +16,9 @@ function Col({ className, children, width = 1, ...props }) {
         ${widths.map(
           (w) =>
             css`
-              @media screen and (min-width: ${Object.keys(w)[0]}) {
-                width: ${Object.values(w)[0] * 100 + '%'};
-                flex: 0 0 ${Object.values(w)[0] * 100 + '%'};
+              @media screen and (min-width: ${Object.values(w)[0]}) {
+                width: ${Object.keys(w)[0] * 100 + '%'};
+                flex: 0 0 ${Object.keys(w)[0] * 100 + '%'};
               }
             `
         )}
