@@ -52,6 +52,19 @@ var BgImg = function BgImg(_ref) {
   }));
 };
 
+var defaults = {
+  space: ['0', '2em', '4em'],
+  spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
+  size: {
+    xs: '400px',
+    sm: '560px',
+    md: '780px',
+    lg: '960px',
+    xl: '1200px',
+    xxl: '1500px'
+  }
+};
+
 var _StyledDiv = _styled("div").withConfig({
   displayName: "Col___StyledDiv",
   componentId: "sc-163x1ar-0"
@@ -63,7 +76,9 @@ function Col(_ref) {
   var className = _ref.className,
       children = _ref.children,
       _ref$width = _ref.width,
-      width = _ref$width === void 0 ? 1 : _ref$width,
+      width = _ref$width === void 0 ? [{
+    0.5: defaults.size.md
+  }] : _ref$width,
       props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width"]);
 
   var widths = Array.isArray(width) ? width : [{
@@ -77,19 +92,6 @@ function Col(_ref) {
     }))
   }), children);
 }
-
-var defaults = {
-  space: ['0', '2em', '4em'],
-  spacing: ['0', '4px', '8px', '16px', '32px', '64px', '96px'],
-  size: {
-    xs: '400px',
-    sm: '560px',
-    md: '780px',
-    lg: '960px',
-    xl: '1200px',
-    xxl: '1500px'
-  }
-};
 
 var _StyledDiv$1 = _styled("div").withConfig({
   displayName: "Cols___StyledDiv",
@@ -110,7 +112,7 @@ var Cols = function Cols(_ref) {
       vAlign = _ref.vAlign,
       flip = _ref.flip,
       _ref$space = _ref.space,
-      space = _ref$space === void 0 ? defaults.space[1] : _ref$space,
+      space = _ref$space === void 0 ? 0 : _ref$space,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "flip", "space"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$1, {
@@ -131,7 +133,7 @@ var Container = function Container(_ref) {
   var className = _ref.className,
       children = _ref.children,
       _ref$size = _ref.size,
-      size = _ref$size === void 0 ? defaults.size.lg : _ref$size,
+      size = _ref$size === void 0 ? defaults.size.md : _ref$size,
       flush = _ref.flush,
       left = _ref.left,
       right = _ref.right,

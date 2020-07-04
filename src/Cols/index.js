@@ -24,7 +24,7 @@ const Cols = ({ children, vAlign, flip, space = 0, ...props }) => (
         ${
           flip &&
           css`
-            flex-direction: column-reverse;
+            flex-direction: row-reverse;
           `
         }
         ${
