@@ -79,10 +79,15 @@ function Col(_ref) {
   var children = _ref.children,
       _ref$width = _ref.width,
       width = _ref$width === void 0 ? 1 : _ref$width,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "width"]);
+      _ref$sizes = _ref.sizes,
+      sizes = _ref$sizes === void 0 ? Object.values(defaults.size) : _ref$sizes,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "width", "sizes"]);
 
+  var widths = Array.isArray(width) ? width : [width];
   return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
-    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], defaults.size.md, width * 100 + '%', width * 100 + '%')
+    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;", ""], widths.map(function (w, idx) {
+      return sizes[idx] && _styled.css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], sizes[idx], w * 100 + '%', w * 100 + '%');
+    }))
   }), children);
 }
 
@@ -122,15 +127,20 @@ var _StyledDiv$2 = _styled__default("div").withConfig({
 });
 
 var Container = function Container(_ref) {
-  var children = _ref.children,
+  var className = _ref.className,
+      children = _ref.children,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? defaults.size.lg : _ref$size,
       _ref$space = _ref.space,
       space = _ref$space === void 0 ? defaults.space[2] : _ref$space,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "size", "space"]);
+      left = _ref.left,
+      right = _ref.right,
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "size", "space", "left", "right"]);
 
-  return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({}, props, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], size, space && _styled.css(["padding-left:", ";padding-right:", ";"], space, space))
+  return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
+    className: className
+  }, props, {
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, space && _styled.css(["padding-left:", ";padding-right:", ";"], space, space), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
   }), children);
 };
 
