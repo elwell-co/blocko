@@ -1,15 +1,9 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import defaults from '../defaults'
+// import defaults from '../defaults'
 
-const Cols = ({
-  children,
-  vAlign,
-  flip,
-  space = defaults.space[1],
-  ...props
-}) => (
+const Cols = ({ children, vAlign, flip, space = 0, ...props }) => (
   <div
     css={css`
       overflow: hidden;

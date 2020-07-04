@@ -1,10 +1,17 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
+import defaults from '../defaults'
+
 /**
  * Represents a single column
  */
-function Col({ className, children, width = 1, ...props }) {
+function Col({
+  className,
+  children,
+  width = [{ 0.5: defaults.size.md }],
+  ...props
+}) {
   // const widths = Array.isArray(width) ? width : [width]
   const widths = Array.isArray(width) ? width : [{ width: '0px' }]
   return (
