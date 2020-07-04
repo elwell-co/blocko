@@ -25,12 +25,8 @@ const Section = ({
         justify-content: center;
         ${!flush &&
         css`
-          padding-top: 40px;
-          padding-bottom: 40px;
-          @media screen and (min-width: 400px) {
-            padding-top: 5vw;
-            padding-bottom: 5vw;
-          }
+          padding-top: calc(3.5vw + 24px);
+          padding-bottom: calc(3.5vw + 24px);
         `}
       `}
       {...props}

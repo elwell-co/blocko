@@ -118,7 +118,7 @@ var Cols = function Cols(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv$1, {
     _css2: css(["overflow:hidden;"])
   }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
-    _css3: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:column-reverse;"]), space && css(["margin:-", ";& > *{padding:", ";}"], space, space))
+    _css3: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:row-reverse;"]), space && css(["margin:-", ";& > *{padding:", ";}"], space, space))
   }), children));
 };
 
