@@ -9,6 +9,7 @@ const Section = ({
   height = 'auto',
   bg,
   space = defaults.space[1],
+  flush,
   ...props
 }) => {
   return (
@@ -22,10 +23,14 @@ const Section = ({
         display: flex;
         align-items: center;
         justify-content: center;
-        ${space &&
+        ${!flush &&
         css`
-          padding-top: ${space};
-          padding-bottom: ${space};
+          padding-top: 40px;
+          padding-bottom: 40px;
+          @media screen and (min-width: 400px) {
+            padding-left: 5vw;
+            padding-right: 5vw;
+          }
         `}
       `}
       {...props}

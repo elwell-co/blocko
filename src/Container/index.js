@@ -8,6 +8,7 @@ const Container = ({
   children,
   size = defaults.size.lg,
   space = defaults.space[1],
+  flush,
   left,
   right,
   ...props
@@ -23,10 +24,15 @@ const Container = ({
         margin-right: auto;
         position: relative;
         ${
-          space &&
+          !flush &&
           css`
-            padding-left: ${space};
-            padding-right: ${space};
+            padding-left: 20px;
+            padding-right: 20px;
+            @media screen and (min-width: 400px) {
+              padding-left: 5vw;
+              padding-right: 5vw;
+            }
+  }
           `
         }
         ${
