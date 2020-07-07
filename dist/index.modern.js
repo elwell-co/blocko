@@ -100,13 +100,6 @@ var _StyledDiv$1 = _styled("div").withConfig({
   return p._css2;
 });
 
-var _StyledDiv2 = _styled("div").withConfig({
-  displayName: "Cols___StyledDiv2",
-  componentId: "j1gxv4-1"
-})(["", ""], function (p) {
-  return p._css3;
-});
-
 var Cols = function Cols(_ref) {
   var children = _ref.children,
       vAlign = _ref.vAlign,
@@ -115,11 +108,12 @@ var Cols = function Cols(_ref) {
       space = _ref$space === void 0 ? 0 : _ref$space,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "flip", "space"]);
 
-  return /*#__PURE__*/React.createElement(_StyledDiv$1, {
-    _css2: css(["overflow:hidden;"])
-  }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
-    _css3: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:row-reverse;"]), space && css(["margin:calc((3.5vw + 24px) * -", ");& > *{padding:calc((3.5vw + 24px) * ", ");}"], space / 2, space / 2))
-  }), children));
+  return (
+    /*#__PURE__*/
+    React.createElement(_StyledDiv$1, _extends({}, props, {
+      _css2: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:row-reverse;"]), space && css(["margin:calc((3.5vw + 24px) * -", ");& > *{padding:calc((3.5vw + 24px) * ", ");}"], space / 2, space / 2))
+    }), children)
+  );
 };
 
 var _StyledDiv$2 = _styled("div").withConfig({
@@ -132,17 +126,17 @@ var _StyledDiv$2 = _styled("div").withConfig({
 var Container = function Container(_ref) {
   var className = _ref.className,
       children = _ref.children,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? defaults.size.md : _ref$size,
+      _ref$width = _ref.width,
+      width = _ref$width === void 0 ? defaults.size.md : _ref$width,
       flush = _ref.flush,
       left = _ref.left,
       right = _ref.right,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "size", "space", "flush", "left", "right"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "space", "flush", "left", "right"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], size, !flush && css(["padding-left:calc(3.5vw + 24px);padding-right:calc(3.5vw + 24px);"]), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, !flush && css(["padding-left:calc(3.5vw + 24px);padding-right:calc(3.5vw + 24px);"]), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
   }), children);
 };
 

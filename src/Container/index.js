@@ -6,7 +6,7 @@ import defaults from '../defaults'
 const Container = ({
   className,
   children,
-  size = defaults.size.md,
+  width = defaults.size.md,
   space = defaults.space[1],
   flush,
   left,
@@ -19,7 +19,7 @@ const Container = ({
       css={css`
         box-sizing: border-box;
         width: 100%;
-        max-width: ${size};
+        max-width: ${width};
         margin-left: auto;
         margin-right: auto;
         position: relative;
