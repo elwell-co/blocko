@@ -164,28 +164,23 @@ var Section = function Section(_ref) {
   }), children);
 };
 
-var _StyledDiv$4 = _styled__default("div").withConfig({
-  displayName: "Box___StyledDiv",
-  componentId: "wtiqff-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
-
 var Box = function Box(_ref) {
   var children = _ref.children,
       _ref$height = _ref.height,
       height = _ref$height === void 0 ? 'auto' : _ref$height,
       bg = _ref.bg,
-      _ref$vSpace = _ref.vSpace,
-      vSpace = _ref$vSpace === void 0 ? defaults.space[2] : _ref$vSpace,
+      hSpace = _ref.hSpace,
+      vSpace = _ref.vSpace,
       width = _ref.width,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "height", "bg", "hSpace", "vSpace", "width"]);
 
-  return /*#__PURE__*/React.createElement(_StyledDiv$4, _extends({}, props, {
-    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, vSpace && _styled.css(["padding-top:", ";padding-bottom:", ";"], vSpace, vSpace))
-  }), /*#__PURE__*/React.createElement(Container, {
-    size: width,
+  return /*#__PURE__*/React.createElement(Section, _extends({
+    bg: bg,
+    height: height,
     space: vSpace
+  }, props), /*#__PURE__*/React.createElement(Container, {
+    width: width,
+    space: hSpace
   }, children));
 };
 

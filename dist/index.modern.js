@@ -113,25 +113,22 @@ const Section = ({
   }), children);
 };
 
-var _StyledDiv$4 = _styled("div").withConfig({
-  displayName: "Box___StyledDiv",
-  componentId: "wtiqff-0"
-})(["", ""], p => p._css2);
-
 const Box = ({
   children,
   height: _height = 'auto',
   bg,
-  hSpace: _hSpace = defaults.space[2],
-  vSpace: _vSpace = defaults.space[2],
+  hSpace,
+  vSpace,
   width,
   ...props
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledDiv$4, Object.assign({}, props, {
-    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _height, bg, _vSpace && css(["padding-top:", ";padding-bottom:", ";"], _vSpace, _vSpace))
-  }), /*#__PURE__*/React.createElement(Container, {
-    size: width,
-    space: _vSpace
+  return /*#__PURE__*/React.createElement(Section, Object.assign({
+    bg: bg,
+    height: _height,
+    space: vSpace
+  }, props), /*#__PURE__*/React.createElement(Container, {
+    width: width,
+    space: hSpace
   }, children));
 };
 
