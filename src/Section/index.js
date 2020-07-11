@@ -21,6 +21,7 @@ const Section = ({
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
         ${space &&
         css`
           padding-top: calc((3.5vw + 24px) * ${space});

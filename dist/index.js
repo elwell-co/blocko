@@ -161,7 +161,7 @@ var Section = function Section(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, space && _styled.css(["padding-top:calc((3.5vw + 24px) * ", ");padding-bottom:calc((3.5vw + 24px) * ", ");"], space, space))
+    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;overflow:hidden;", ""], height, bg, space && _styled.css(["padding-top:calc((3.5vw + 24px) * ", ");padding-bottom:calc((3.5vw + 24px) * ", ");"], space, space))
   }), children);
 };
 
