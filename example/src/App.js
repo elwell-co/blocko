@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BgImg, Col, Cols, Container, Section, Box, H } from 'blocko'
+import { defaults, BgImg, Col, Cols, Container, Section, Box, H } from 'blocko'
 
 import logo from './blocko-logo.svg'
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Section bg='#fff' space={1}>
-        <Container space={1}>
+        <Container space={1} width='700px'>
           <img
             style={{ maxWidth: '100%' }}
             width='300'
@@ -17,8 +17,8 @@ const App = () => {
           />
         </Container>
       </Section>
-      <Section>
-        <Container>
+      <Section space={1}>
+        <Container space={1} width='700px'>
           <H level='1'>Style-free layout components for React.</H>
           <p>
             Blocko gives you the building blocks you need to make responsive
@@ -38,8 +38,8 @@ const App = () => {
           </p>
         </Container>
       </Section>
-      <Section bg='#fff' height='60vh'>
-        <Container>
+      <Section space={1} bg='#fff' height='60vh'>
+        <Container space={1}>
           <H>{'<Section />'}</H>
           <p>Use sections to structure a page.</p>
           <p>Give them different background colours to break up content.</p>
@@ -49,8 +49,8 @@ const App = () => {
           </p>
         </Container>
       </Section>
-      <Section>
-        <Container>
+      <Section space={1}>
+        <Container space={1}>
           <H>{'<Container />'}</H>
           <p>Use containers to group content inside a section.</p>
           <p>
@@ -59,8 +59,8 @@ const App = () => {
           </p>
         </Container>
       </Section>
-      <Section bg='#fff'>
-        <Container>
+      <Section space={1} bg='#fff'>
+        <Container space={1}>
           <Cols>
             <Col width={[0.5, 0.66]}>
               <H>{'<Cols />'}</H>
@@ -78,6 +78,7 @@ const App = () => {
       <Section height='100vh'>
         <BgImg src='https://via.placeholder.com/150'></BgImg>
         <Container
+          space={1}
           style={{
             textAlign: 'center'
           }}
