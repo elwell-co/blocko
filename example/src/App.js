@@ -128,9 +128,9 @@ const App = () => {
           </Cols>
         </Container>
       </Section>
-      <Section>
-        <Container>
-          <Cols>
+      <Section space={1}>
+        <Container space={1}>
+          <Cols space={1}>
             <Col width={0.333}>
               <H>One</H>
             </Col>
