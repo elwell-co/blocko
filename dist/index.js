@@ -129,8 +129,7 @@ var _StyledDiv$2 = _styled__default("div").withConfig({
 var Container = function Container(_ref) {
   var className = _ref.className,
       children = _ref.children,
-      _ref$width = _ref.width,
-      width = _ref$width === void 0 ? defaults.size.md : _ref$width,
+      width = _ref.width,
       flush = _ref.flush,
       left = _ref.left,
       right = _ref.right,
@@ -156,13 +155,14 @@ var Section = function Section(_ref) {
       _ref$height = _ref.height,
       height = _ref$height === void 0 ? 'auto' : _ref$height,
       bg = _ref.bg,
-      flush = _ref.flush,
+      _ref$space = _ref.space,
+      space = _ref$space === void 0 ? 1 : _ref$space,
       props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "height", "bg", "space", "flush"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, !flush && _styled.css(["padding-top:calc(3.5vw + 24px);padding-bottom:calc(3.5vw + 24px);"]))
+    _css2: _styled.css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], height, bg, space && _styled.css(["padding-top:calc((3.5vw + 24px) * ", ");padding-bottom:calc((3.5vw + 24px) * ", ");"], space, space))
   }), children);
 };
 

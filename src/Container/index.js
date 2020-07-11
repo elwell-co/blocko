@@ -6,7 +6,7 @@ import defaults from '../defaults'
 const Container = ({
   className,
   children,
-  width = defaults.size.md,
+  width,
   space = defaults.space[1],
   flush,
   left,
