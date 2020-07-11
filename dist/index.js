@@ -107,8 +107,7 @@ var Cols = function Cols(_ref) {
   var children = _ref.children,
       vAlign = _ref.vAlign,
       flip = _ref.flip,
-      _ref$space = _ref.space,
-      space = _ref$space === void 0 ? 0 : _ref$space,
+      space = _ref.space,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "flip", "space"]);
 
   return (
@@ -130,15 +129,15 @@ var Container = function Container(_ref) {
   var className = _ref.className,
       children = _ref.children,
       width = _ref.width,
-      flush = _ref.flush,
+      space = _ref.space,
       left = _ref.left,
       right = _ref.right,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "space", "flush", "left", "right"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "space", "left", "right"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, !flush && _styled.css(["padding-left:calc(3.5vw + 24px);padding-right:calc(3.5vw + 24px);"]), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, space && _styled.css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
   }), children);
 };
 
@@ -155,8 +154,7 @@ var Section = function Section(_ref) {
       _ref$height = _ref.height,
       height = _ref$height === void 0 ? 'auto' : _ref$height,
       bg = _ref.bg,
-      _ref$space = _ref.space,
-      space = _ref$space === void 0 ? 1 : _ref$space,
+      space = _ref.space,
       props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "height", "bg", "space", "flush"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({

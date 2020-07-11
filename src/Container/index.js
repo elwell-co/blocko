@@ -7,8 +7,7 @@ const Container = ({
   className,
   children,
   width,
-  space = defaults.space[1],
-  flush,
+  space,
   left,
   right,
   ...props
@@ -24,10 +23,10 @@ const Container = ({
         margin-right: auto;
         position: relative;
         ${
-          !flush &&
+          space &&
           css`
-            padding-left: calc(3.5vw + 24px);
-            padding-right: calc(3.5vw + 24px);
+            padding-left: calc((3.5vw + 24px) * ${space});
+            padding-right: calc((3.5vw + 24px) * ${space});
           `
         }
         ${

@@ -1,14 +1,12 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
 
-import defaults from '../defaults'
-
 const Section = ({
   className,
   children,
   height = 'auto',
   bg,
-  space = 1,
+  space,
   flush,
   ...props
 }) => {

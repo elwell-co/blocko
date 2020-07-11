@@ -63,12 +63,12 @@ const Cols = ({
   children,
   vAlign,
   flip,
-  space: _space = 0,
+  space,
   ...props
 }) =>
 /*#__PURE__*/
 React.createElement(_StyledDiv$1, Object.assign({}, props, {
-  _css2: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:row-reverse;"]), _space && css(["margin:calc((3.5vw + 24px) * -", ");& > *{padding:calc((3.5vw + 24px) * ", ");}"], _space / 2, _space / 2))
+  _css2: css(["min-width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;", " ", " ", ""], vAlign === 'center' && css(["align-items:center;"]), flip && css(["flex-direction:row-reverse;"]), space && css(["margin:calc((3.5vw + 24px) * -", ");& > *{padding:calc((3.5vw + 24px) * ", ");}"], space / 2, space / 2))
 }), children);
 
 var _StyledDiv$2 = _styled("div").withConfig({
@@ -80,8 +80,7 @@ const Container = ({
   className,
   children,
   width,
-  space: _space = defaults.space[1],
-  flush,
+  space,
   left,
   right,
   ...props
@@ -89,7 +88,7 @@ const Container = ({
   return /*#__PURE__*/React.createElement(_StyledDiv$2, Object.assign({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, !flush && css(["padding-left:calc(3.5vw + 24px);padding-right:calc(3.5vw + 24px);"]), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, space && css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
   }), children);
 };
 
@@ -103,14 +102,14 @@ const Section = ({
   children,
   height: _height = 'auto',
   bg,
-  space: _space = 1,
+  space,
   flush,
   ...props
 }) => {
   return /*#__PURE__*/React.createElement(_StyledDiv$3, Object.assign({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _height, bg, _space && css(["padding-top:calc((3.5vw + 24px) * ", ");padding-bottom:calc((3.5vw + 24px) * ", ");"], _space, _space))
+    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", ""], _height, bg, space && css(["padding-top:calc((3.5vw + 24px) * ", ");padding-bottom:calc((3.5vw + 24px) * ", ");"], space, space))
   }), children);
 };
 

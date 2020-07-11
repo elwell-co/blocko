@@ -3,7 +3,7 @@ import { css } from 'styled-components/macro'
 
 // import defaults from '../defaults'
 
-const Cols = ({ children, vAlign, flip, space = 0, ...props }) => (
+const Cols = ({ children, vAlign, flip, space, ...props }) => (
   // <div
   //   css={css`
   //     overflow: hidden;
