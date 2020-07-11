@@ -21,7 +21,7 @@ const Container = ({
         max-width: ${width};
         margin-left: auto;
         margin-right: auto;
-        position: relative;
+        /* position: relative; */
         ${
           space &&
           css`

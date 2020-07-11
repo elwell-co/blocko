@@ -88,7 +88,7 @@ const Container = ({
   return /*#__PURE__*/React.createElement(_StyledDiv$2, Object.assign({
     className: className
   }, props, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, space && css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", " ", " ", ""], width, space && css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && css(["margin-left:0;"]), right && css(["margin-right:0;"]))
   }), children);
 };
 

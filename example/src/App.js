@@ -7,8 +7,8 @@ import logo from './blocko-logo.svg'
 const App = () => {
   return (
     <>
-      <Section bg='#fff'>
-        <Container>
+      <Section bg='#fff' space={1}>
+        <Container space={1}>
           <img
             style={{ maxWidth: '100%' }}
             width='300'
@@ -85,9 +85,9 @@ const App = () => {
           <H>Centering stuff is easy.</H>
         </Container>
       </Section>
-      <Section bg='#fff' space={0}>
-        <Container space={0}>
-          <Cols space={0} sizes={['1000px']} vAlign='center'>
+      <Section bg='#fff'>
+        <Container>
+          <Cols vAlign='center'>
             <Col width={0.5}>
               <Section>
                 <Container>
@@ -120,7 +120,7 @@ const App = () => {
               </Section>
             </Col>
             <Col width={0.5}>
-              <Section space={0} style={{ paddingBottom: '100%' }}>
+              <Section style={{ paddingBottom: '100%' }}>
                 <BgImg src='https://via.placeholder.com/150'></BgImg>
               </Section>
             </Col>
