@@ -10,6 +10,7 @@ const Container = ({
   space,
   left,
   right,
+  textAlign,
   ...props
 }) => {
   return (
@@ -22,6 +23,12 @@ const Container = ({
         margin-left: auto;
         margin-right: auto;
         position: relative;
+        ${
+          textAlign &&
+          css`
+            text-align: ${textAlign};
+          `
+        }
         ${
           space &&
           css`

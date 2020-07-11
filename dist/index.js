@@ -132,12 +132,13 @@ var Container = function Container(_ref) {
       space = _ref.space,
       left = _ref.left,
       right = _ref.right,
-      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "space", "left", "right"]);
+      textAlign = _ref.textAlign,
+      props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width", "space", "left", "right", "textAlign"]);
 
   return /*#__PURE__*/React.createElement(_StyledDiv$2, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", ""], width, space && _styled.css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;position:relative;", " ", " ", " ", ""], width, textAlign && _styled.css(["text-align:", ";"], textAlign), space && _styled.css(["padding-left:calc((3.5vw + 24px) * ", ");padding-right:calc((3.5vw + 24px) * ", ");"], space, space), left && _styled.css(["margin-left:0;"]), right && _styled.css(["margin-right:0;"]))
   }), children);
 };
 
