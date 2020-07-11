@@ -45,7 +45,7 @@ function Col({
   ...props
 }) {
   const widths = Array.isArray(width) ? width : [{
-    width: '0px'
+    [width]: '0px'
   }];
   return /*#__PURE__*/React.createElement(_StyledDiv, Object.assign({
     className: className

@@ -76,6 +76,8 @@ var _StyledDiv = _styled__default("div").withConfig({
 });
 
 function Col(_ref) {
+  var _ref2;
+
   var className = _ref.className,
       children = _ref.children,
       _ref$width = _ref.width,
@@ -84,9 +86,7 @@ function Col(_ref) {
   }] : _ref$width,
       props = _objectWithoutPropertiesLoose(_ref, ["className", "children", "width"]);
 
-  var widths = Array.isArray(width) ? width : [{
-    width: '0px'
-  }];
+  var widths = Array.isArray(width) ? width : [(_ref2 = {}, _ref2[width] = '0px', _ref2)];
   return /*#__PURE__*/React.createElement(_StyledDiv, _extends({
     className: className
   }, props, {

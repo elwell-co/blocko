@@ -89,9 +89,9 @@ const App = () => {
       <Section bg='#fff'>
         <Container>
           <Cols vAlign='center'>
-            <Col width={0.5}>
-              <Section>
-                <Container>
+            <Col>
+              <Section space={1}>
+                <Container space={1}>
                   <H>Advanced Layouts</H>
                   <p>Combine these blocks to create advanced layouts.</p>
                   <p>This layout features:</p>
@@ -120,7 +120,7 @@ const App = () => {
                 </Container>
               </Section>
             </Col>
-            <Col width={0.5}>
+            <Col>
               <Section style={{ paddingBottom: '100%' }}>
                 <BgImg src='https://via.placeholder.com/150'></BgImg>
               </Section>

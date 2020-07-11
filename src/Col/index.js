@@ -13,7 +13,7 @@ function Col({
   ...props
 }) {
   // const widths = Array.isArray(width) ? width : [width]
-  const widths = Array.isArray(width) ? width : [{ width: '0px' }]
+  const widths = Array.isArray(width) ? width : [{ [width]: '0px' }]
   return (
     <div
       className={className}
