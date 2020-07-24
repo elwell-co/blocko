@@ -134,13 +134,14 @@ const Box = ({
 };
 
 const H = ({
+  className,
   children,
   level: _level = 3,
   size: _size = _level
 }) => {
   const Tag = 'h' + _level;
   return /*#__PURE__*/React.createElement(Tag, {
-    className: 'h' + _size
+    className: `h${_size} ${className}`
   }, children);
 };
 

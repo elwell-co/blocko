@@ -186,14 +186,15 @@ var Box = function Box(_ref) {
 };
 
 var H = function H(_ref) {
-  var children = _ref.children,
+  var className = _ref.className,
+      children = _ref.children,
       _ref$level = _ref.level,
       level = _ref$level === void 0 ? 3 : _ref$level,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? level : _ref$size;
   var Tag = 'h' + level;
   return /*#__PURE__*/React.createElement(Tag, {
-    className: 'h' + size
+    className: "h" + size + " " + className
   }, children);
 };
 
