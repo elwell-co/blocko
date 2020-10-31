@@ -20,6 +20,7 @@ function Col({
       css={css`
         box-sizing: border-box;
         flex: 0 0 100%;
+        width: 100%;
         ${widths.map(
           (w) =>
             css`
