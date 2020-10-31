@@ -90,7 +90,7 @@ function Col(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv, _extends({
     className: className
   }, props, {
-    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;", ""], widths.map(function (w) {
+    _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;width:100%;", ""], widths.map(function (w) {
       return _styled.css(["@media screen and (min-width:", "){width:", ";flex:0 0 ", ";}"], Object.values(w)[0], Object.keys(w)[0] * 100 + '%', Object.keys(w)[0] * 100 + '%');
     }))
   }), children);
